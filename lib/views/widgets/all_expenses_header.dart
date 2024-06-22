@@ -3,18 +3,19 @@ import 'package:responsive_dash_board/utils/app_style.dart';
 import 'package:responsive_dash_board/views/widgets/range_option.dart';
 
 class AllExpensesHeader extends StatelessWidget {
-  const AllExpensesHeader({super.key});
+  const AllExpensesHeader({super.key, required this.title});
+  final String title;
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return  Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          'All Expenses',
-          style: AppStyle.styleSemiBold20,
+          title,
+          style: AppStyle.styleSemiBold20(context),
         ),
-        RangeOption(),
+      const  RangeOption(),
       ],
     );
   }

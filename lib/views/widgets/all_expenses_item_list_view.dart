@@ -36,6 +36,49 @@ class _AllExpensesItemListViewState extends State<AllExpensesItemListView> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      children: [
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              updateIndex(0);
+            },
+            child: AllExpensesItem(
+              allExpensesItemModel: allExpensesItemModel[0],
+              isActive: aciveIndex == 0,
+            ),
+          ),
+        ),
+        const SizedBox(
+          width: 12,
+        ),
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              updateIndex(1);
+            },
+            child: AllExpensesItem(
+              allExpensesItemModel: allExpensesItemModel[1],
+              isActive: aciveIndex == 1,
+            ),
+          ),
+        ),
+        const SizedBox(
+          width: 12,
+        ),
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              updateIndex(2);
+            },
+            child: AllExpensesItem(
+              allExpensesItemModel: allExpensesItemModel[2],
+              isActive: aciveIndex == 2,
+            ),
+          ),
+        ),
+      ],
+    );
+    return Row(
       // children: allExpensesItemModel.map((e) => Expanded(child: AllExpensesItem(allExpensesItemModel: e))).toList()
       children: allExpensesItemModel.asMap().entries.map((e) {
         int index = e.key;
@@ -52,7 +95,7 @@ class _AllExpensesItemListViewState extends State<AllExpensesItemListView> {
             },
             child: Padding(
               padding: index == 1
-                  ? const EdgeInsets.symmetric(horizontal: 12.0)
+                  ? const EdgeInsets.symmetric(horizontal: 0.0)
                   : const EdgeInsets.symmetric(horizontal: 0.0),
               child: AllExpensesItem(
                 allExpensesItemModel: item,
@@ -63,5 +106,13 @@ class _AllExpensesItemListViewState extends State<AllExpensesItemListView> {
         );
       }).toList(),
     );
+  }
+
+  void updateIndex(int index) {
+    if (aciveIndex != index) {
+      setState(() {
+        aciveIndex = index;
+      });
+    }
   }
 }

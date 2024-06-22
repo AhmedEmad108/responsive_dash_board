@@ -20,7 +20,7 @@ class CustomButtom extends StatelessWidget {
         child: Center(
           child: Text(
             title,
-            style: AppStyle.styleSemiBold18.copyWith(
+            style: AppStyle.styleSemiBold18(context).copyWith(
               color: textColor,
             ),
           ),
@@ -51,7 +51,7 @@ class CustomButtom2 extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Text(
           title,
-          style: AppStyle.styleSemiBold18.copyWith(
+          style: AppStyle.styleSemiBold18(context).copyWith(
             color: textColor,
           ),
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dash_board/utils/size_config.dart';
 import 'package:responsive_dash_board/views/widgets/custom_drawer.dart';
 import 'package:responsive_dash_board/views/widgets/home_view_body.dart';
 
@@ -18,16 +19,16 @@ class _DashBoardViewState extends State<DashBoardView> {
       key: scaffoldKey,
       drawer: const CustomDrawer(),
       backgroundColor: const Color(0xffF7F9FA),
-      appBar: MediaQuery.of(context).size.width <= 900
+      appBar: MediaQuery.of(context).size.width <= SizeConfig.tablet
           ? AppBar(
-              backgroundColor: const Color(0xFFFAFAFA),
+              backgroundColor: const Color(0xFF064061),
               leading: IconButton(
                 onPressed: () {
                   scaffoldKey.currentState!.openDrawer();
                 },
                 icon: const Icon(
                   Icons.menu,
-                  // color: Color(0xffFAFAFA),
+                  color: Color(0xffFAFAFA),
                 ),
               ),
             )

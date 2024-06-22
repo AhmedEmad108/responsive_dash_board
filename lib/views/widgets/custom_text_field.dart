@@ -11,7 +11,7 @@ class CustomTextField extends StatelessWidget {
         contentPadding: const EdgeInsets.all(20),
         fillColor: const Color(0xffFAFAFA),
         filled: true,
-        hintStyle: AppStyle.styleRegular16.copyWith(
+        hintStyle: AppStyle.styleRegular16(context).copyWith(
           color: const Color(0xffAAAAAA),
         ),
         hintText: hint,
